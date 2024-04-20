@@ -7,4 +7,16 @@ installGlobals();
 
 export default defineConfig({
   plugins: [remix(), tsconfigPaths()],
+  server: { port: 3000 },
+  ssr: {
+    noExternal: [
+      "@plasmicapp/loader-react",
+      "@plasmicapp/data-sources-context",
+      "@plasmicapp/loader-core",
+      "@plasmicapp/loader-fetcher",
+      "@plasmicapp/query",
+      "@plasmicapp/loader-splits",
+      "@plasmicapp/prepass",
+    ],
+  },
 });
